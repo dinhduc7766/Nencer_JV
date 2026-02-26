@@ -5,6 +5,8 @@
 package controllers;
 
 import commons.Common;
+import dao.CategoryDAO;
+import dao.ReceiptDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,6 +15,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.List;
+import models.Categories;
+import models.Receipts;
 
 /**
  *
@@ -65,9 +70,25 @@ public class IndexController extends HttpServlet {
         if (session == null) {
             // Not login.
             response.sendRedirect("/login");
+            //return
         }
         // Logged using email of user query data from db.
         session.getAttribute("USER_EMAIL_LOGIN");
+        // Pass search params.
+        String id = request.getParameter("id");
+        String category = request.getParameter("category");
+        String from_date = request.getParameter("from_date");
+        String to_date = request.getParameter("to_date");
+        
+        // List receipts.
+        ReceiptDAO receiptDAO = new ReceiptDAO();
+        List<Receipts> receipts = receiptDAO.list(id, category, from_date, to_date);
+        request.setAttribute("receipts", receipts);
+        //List categories
+        CategoryDAO categoryDAO  = new CategoryDAO();
+        List<Categories> categories = categoryDAO.listCategory();
+        // Add to request data and return to jsp file.
+        request.setAttribute("categories", categories);
         // Render view file.
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

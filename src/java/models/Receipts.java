@@ -23,6 +23,8 @@ public class Receipts {
     private int logistics_provider_id;
     private int status;
     private String deleted_at;
+    private String category_name;
+    private String logistics_providers_name;
 
     public Receipts() {
     }
@@ -156,5 +158,20 @@ public class Receipts {
         this.deleted_at = deleted_at;
     }
     
+    public String getCategory_name() {
+        return category_name;
+    }
+
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
+    }
+
+    public String getLogistics_providers_name() {
+        return logistics_providers_name;
+    }
+
+    public void setLogistics_providers_name(String logistics_providers_name) {
+        this.logistics_providers_name = logistics_providers_name;
+    }
     
 }

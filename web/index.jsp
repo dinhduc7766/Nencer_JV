@@ -1,3 +1,5 @@
+<%@page import="models.Receipts"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="components/head.jsp" %>
@@ -29,156 +31,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <%
+                                List<Receipts> receipts = (List<Receipts>) request.getAttribute("receipts");
+                                for (Receipts receipt : receipts) {
+                             %>
                             <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
+                                <td><%= receipt.getId() %></td>
+                                <td><%= receipt.getName() %></td>
+                                <td><%= receipt.getCategory_name() %></td>
+                                <td><%= receipt.getNote() %></td>
+                                <td><%= receipt.getDelivery_date() %></td>
+                                <td><%= receipt.getTotal_price() %></td>
+                                <td><img src="src" alt=""/></td>
+                                <td><%= receipt.getLogistics_providers_name() %></td>
                             </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>Tên đơn hàng</td>
-                                <td>Điện thoại</td>
-                                <td>Chi tiết đơn hàng này để làm gì</td>
-                                <td>2025-10-09</td>
-                                <td>1,000,000,000</td>
-                                <td>hinhanh1.jpg</td>
-                                <td>J&T Express</td>
-                            </tr>
+                            <% } %>
                         </tbody>
                     </table>
                 </div>

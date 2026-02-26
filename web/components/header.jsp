@@ -1,8 +1,10 @@
+<%@page import="models.Categories"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <div id="header">
     <div class="container">
-        <form action="" method="get">
+        <form action="index" method="get">
         <div class="row">
             <div class="col-md-3">
                 <label for="id" class="text-bold">Mã đơn hàng</label>
@@ -10,11 +12,16 @@
             </div>
             <div class="col-md-3">
                 <label for="category" class="text-bold">Danh mục</label>
+
                 <select name="category" id="category" class="form-control">
-                    <option value="phone">Điện thoại</option>
-                    <option value="laptop">Laptop</option>
-                    <option value="pc">PC</option>
-                    <option value="other">Phụ kiện</option>
+                    <option value="">-- Chọn danh mục --</option>
+                    <%
+                    // Code java here
+                    List<Categories> categories = (List<Categories>) request.getAttribute("categories");
+                    for (Categories category : categories) {
+                    %>
+                    <option value="<%= category.getId()%>"><%= category.getName()%></option>
+                    <% } %>
                 </select>
             </div>
             <div class="col-md-3">

@@ -93,7 +93,7 @@ public class AuthController extends HttpServlet {
             // Dieu huong website sang 1 route khac
 //            String email1 = (String) session.getAttribute("USER_EMAIL_LOGIN");
 //            System.out.println(email1);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            response.sendRedirect("index");
             return;
         }
         // Login failed

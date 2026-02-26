@@ -6,12 +6,9 @@
 <%@page import="java.util.List" %>
 <body>
     <div id="main">
-        <!-- Begin header -->
-        <%@include file="components/header.jsp" %>
-        <!-- End header -->
-        <div class="clear-fix"></div>
+        
         <!-- Begin content -->
-        <div id="content">
+        <div id="content" class="mt-4">
             <div class="container">
                 <div class="col-md-12">
                     <a href="index" class="btn btn-secondary">Danh sách đơn hàng</a>
